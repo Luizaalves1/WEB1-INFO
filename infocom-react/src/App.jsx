@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import ProductList from './components/ProductList';
 import Button from './components/Button';
+import SearchBar from "./components/SearchBar";
+import { useSearch } from "./hooks/useSearch";
 import './App.css';
 
 const ITEMS_PER_PAGE = 8;
@@ -10,6 +12,7 @@ function App() {
   const [visibleCount, setVisible] = useState(ITEMS_PER_PAGE);
   const [loading, setLoading]      = useState(true);
   const [error, setError]          = useState(null);
+  const { query, setQuery, filtered } = useSearch(products);
 
   // 1. Buscar produtos
   useEffect(() => {
@@ -27,19 +30,17 @@ function App() {
   // 3. Renderização
   return (
     <main>
-      {loading && <p>Carregando produtos...</p>}
-
-      {error && <div className='error'>{error}</div>}
-
+      { /*... código existente */ }
       {products && (
         <>
-          <ProductList products={products.slice(0, visibleCount)} />
+          <SearchBar value={query} onChange={setQuery} />
+          <ProductList products={filtered.slice(0, visibleCount)} />
 
           <Button
             onClick={handleLoadMore}
-            disabled={visibleCount >= products.length}
+            disabled={visibleCount >= filtered.length}
           >
-            {visibleCount >= products.length
+            {visibleCount >= filtered.length
               ? "Fim dos produtos"
               : "Carregar Mais"}
           </Button>
