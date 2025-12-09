@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState, useEffect } from "react";
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
+  const [products, setProducts] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   return (
     <>
-     <main>
-       <h1>Catálogo de Produtos</h1>
-     </main>
+      <main>
+        <h1>Catálogo de Produtos</h1>
+      </main>
     </>
   )
 }
