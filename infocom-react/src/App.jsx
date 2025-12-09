@@ -3,6 +3,7 @@ import ProductList from './components/ProductList';
 import Button from './components/Button';
 import SearchBar from "./components/SearchBar";
 import { useSearch } from "./hooks/useSearch";
+import Navbar from "./components/NavBar";
 import './App.css';
 
 const ITEMS_PER_PAGE = 8;
