@@ -1,26 +1,14 @@
-import './ProductCard.css';
-import { useNavigate } from "react-router-dom";
+import ProductCard from './ProductCard';
+import './ProductList.css';
 
-function ProductCard({ product }) {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate(`/products/${product.id}`);
-  };
-
+function ProductList({ products }) {
   return (
-    // Dentro do return do componente ProductCard
-    <div className='card' onClick={handleClick}>
-      <img src={product.image} alt={product.title} />
-
-      <div className='separator'></div>
-
-      <div className='price'>R$ {product.price.toFixed(2).replace(".", ",")}</div>
-
-      <h3>{product.title}</h3>
+    <div className="grid">
+      {products.map((prod) => (
+        <ProductCard key={prod.id} product={prod} />
+      ))}
     </div>
-
   );
 }
 
-export default ProductCard;
+export default ProductList;

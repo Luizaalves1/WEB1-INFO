@@ -1,17 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
-export function useProducts() {
-  const [products, setProducts] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+
+export function useProducts(id) {
+  const [product, setProduct] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
+    fetch(`https://fakestoreapi.com/products/${id}`)
       .then((res) => res.json())
-      .then(setProducts)
-      .catch(() => setError("Erro ao carregar produtos."))
-      .finally(() => setLoading(false));
-  }, []);
+      .then(setProduct)
+      .catch(() => setError('Erro ao carregar detalhes do produto.'))
+      .finally(() => setLoading(false))
+  }, [id])
 
-  return { products, loading, error };
+  return { product, loading, error }
 }
