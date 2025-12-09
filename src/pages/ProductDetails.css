@@ -6,6 +6,10 @@
   gap: 1rem;
 }
 
+.product-details .card {
+  cursor: default; /* Remove o cursor pointer para o card na página de detalhes */
+}
+
 .product-details img {
   max-width: 200px;
   height: auto;
@@ -29,6 +33,7 @@
   align-self: flex-start;
 }
 
+/* Estilo para a categoria do produto, em formato de badge */
 .product-details .product-category {
   font-size: 0.75rem;
   background-color: #888;

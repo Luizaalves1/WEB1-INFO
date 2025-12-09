@@ -1,9 +1,8 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+// Código existente
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import './index.css';
-import App from './App.jsx';
+// Código existente
 import Home from "./pages/Home.jsx"; // importação da página Home
+// Código existente
 import ProductDetails from "./pages/ProductDetails.jsx"; // importação da página de detalhes
 
 const router = createBrowserRouter([
@@ -22,9 +21,12 @@ const router = createBrowserRouter([
     ],
   },
 ]);
+// Resto do código permanece o mesmo
+// Resto do código permanece o mesmo
 
-createRoot(document.getElementById('root')).render(
+
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>,
+  </StrictMode>
 );

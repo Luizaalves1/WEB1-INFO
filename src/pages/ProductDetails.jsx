@@ -13,11 +13,11 @@ function ProductDetails() {
   if (!product) return <p>Produto não encontrado.</p>;
 
   return (
-    <div className="product-details">
+    <div className='product-details'>
       <ProductCard product={product} detailedView={true} />
       <Button>Comprar</Button>
-      <Link to="/">
-        <Button variant="secondary">Início</Button>
+      <Link to='/'>
+        <Button variant='secondary'>Início</Button>
       </Link>
     </div>
   );
