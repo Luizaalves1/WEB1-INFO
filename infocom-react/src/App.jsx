@@ -21,6 +21,7 @@ function App() {
     <>
       <main>
         <h1>Catálogo de Produtos</h1>
+        {products && <ProductCard product={products[0]} />}
       </main>
     </>
   )
