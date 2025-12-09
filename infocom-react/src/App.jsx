@@ -3,7 +3,9 @@ import ProductList from './components/ProductList';
 import Button from './components/Button';
 import SearchBar from "./components/SearchBar";
 import { useSearch } from "./hooks/useSearch";
-import Navbar from "./components/NavBar";
+import Navbar from './components/NavBar';
+import { FaShoppingCart } from "react-icons/fa";
+
 import './App.css';
 
 const ITEMS_PER_PAGE = 8;
@@ -29,9 +31,11 @@ function App() {
     setVisible((prev) => prev + ITEMS_PER_PAGE);
 
   // 3. Renderização
-  return (
-    <main>
-      { /*... código existente */ }
+ return (
+    <>
+      <Navbar />
+      <main>
+          { /*... código existente */ }
       {products && (
         <>
           <SearchBar value={query} onChange={setQuery} />
@@ -47,8 +51,9 @@ function App() {
           </Button>
         </>
       )}
-    </main>
+      </main>
+    </>
   );
 }
-
 export default App;
+
