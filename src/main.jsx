@@ -1,9 +1,11 @@
-// Código existente
+import  { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App.jsx';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// Código existente
 import Home from "./pages/Home.jsx"; // importação da página Home
-// Código existente
 import ProductDetails from "./pages/ProductDetails.jsx"; // importação da página de detalhes
+
 
 const router = createBrowserRouter([
   {
