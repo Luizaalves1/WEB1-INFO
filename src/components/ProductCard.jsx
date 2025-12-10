@@ -1,32 +1,25 @@
-import ProductCard from './ProductCard';
-import './ProductList.css';
+import './ProductCard.css';
 import { useNavigate } from "react-router-dom";
 
-// Código existente
-
-function ProductCard({ product, detailedView = false }) {
+function ProductCard({ product }) {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    // Só navega se não estivermos na página de detalhes
-    if (!detailedView) {
-      navigate(`/products/${product.id}`);
-    }
+    navigate(`/products/${product.id}`);
   };
 
   return (
+    // Dentro do return do componente ProductCard
     <div className='card' onClick={handleClick}>
-      {/* Código existente */}
+      <img src={product.image} alt={product.title} />
 
-      {detailedView && (
-        <>
-          <p className='product-description'>{product.description}</p>
+      <div className='separator'></div>
 
-          <span className='product-category'>{product.category}</span>
-        </>
-      )}
+      <div className='price'>R$ {product.price.toFixed(2).replace(".", ",")}</div>
+
+      <h3>{product.title}</h3>
     </div>
   );
 }
 
-export default ProductList;
+export default ProductCard;
