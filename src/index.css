@@ -1,9 +1,3 @@
-/* MUDOU AQUI */
-* {
-  box-sizing: border-box;
-}
-
-/* MUDOU AQUI */
 body {
   margin: 0;
   font-family: sans-serif;
@@ -18,3 +12,8 @@ body {
     align-items: center;
     width: 100%;
 }
+
+* {
+  box-sizing: border-box;
+}
+
